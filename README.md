@@ -18,7 +18,7 @@
 
 Acesse a aplicação GeoClimate diretamente pelo seu navegador, sem necessidade de instalação:
 
-🌐 **Link de acesso:** [GeoClimate](https://seu-usuario.github.io/GeoClimate)
+🌐 **Link de acesso:** [GeoClimate](https://tainararcs.github.io/Geo-Climate/)
 
 ## Funcionalidades
 
