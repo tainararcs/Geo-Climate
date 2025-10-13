@@ -444,6 +444,10 @@ body {
     margin: 2rem 8%;
   }
 
+  .preloader {
+    margin-top: 35%;
+  }
+  
   .result {
     margin: 0 0 35px 19%;
   }
@@ -472,6 +476,10 @@ body {
     padding: 0 3rem 0 1rem; 
   }
   
+  .preloader {
+    margin-top: 50%;
+  }
+
   .result {
     margin: 0 0 55px 12%;
   }
@@ -497,9 +505,14 @@ body {
   }
   
   .search-input { 
-    font-size: 50px;   /* aumenta o tamanho da fonte do texto */
-    height: 150rem;      /* altura do input */
-    padding: 0 5rem;   /* espaço interno à esquerda e à direita */
+    font-size: 50px;   
+    height: 150rem;     
+    padding: 0 5rem;  
+  }
+
+  .preloader {
+    margin-top: 80%;
+    margin-left: -15%;
   }
   
   .result {
