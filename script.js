@@ -1,3 +1,5 @@
+const API_KEY = 'f77462a9769ff8e59091548c0d2b0474';
+
 const searchInput = document.querySelector('.search-input');
 const searchBtn = document.querySelector('.search-btn');
 const resultDiv = document.querySelector('.result');
@@ -6,7 +8,7 @@ const preloader = document.querySelector('.preloader');
 const searchHistory = document.querySelector('.search-history');
 
 // Botão flutuante: alterna entre "ver mais" e "voltar ao topo"
-const scrollBtn = document.getElementById('scrollToggleBtn');
+const scrollBtn = document.querySelector('.scroll-btn');
 
 // Histórico de pesquisa armazenado apenas em memória.
 let history = [];
@@ -89,7 +91,7 @@ scrollBtn.addEventListener('click', () => {
 
 // Busca dados da API OpenWeatherMap.
 async function searchWeather(city) {     
-    const response = await fetch(`/api/climate?cidade=${encodeURIComponent(city)}`);
+    const response = await fetch(`/api/climate?city=${encodeURIComponent(city)}`);
 
     if (!response.ok) {
         console.log(`HTTP ERROR: ${response.status}`)
