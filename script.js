@@ -93,9 +93,9 @@ scrollBtn.addEventListener('click', () => {
 
 // Busca dados da API OpenWeatherMap.
 async function searchWeather(city) { 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pt_br`; 
+    // const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pt_br`; 
     
-    const response = await fetch(url);
+    const response = await fetch(`/api/climate?cidade=${encodeURIComponent(city)}`);
 
     if (!response.ok) {
         console.log(`HTTP ERROR: ${response.status}`)
