@@ -50,6 +50,7 @@ searchInput.addEventListener('keydown', (e) => {
 
 // Quando o usuário rola a página, atualiza o estado do botão
 window.addEventListener('scroll', () => {
+    
     const scrolled = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
 
@@ -60,6 +61,21 @@ window.addEventListener('scroll', () => {
     } else {
         scrollBtn.innerHTML = '⬆';
         scrollBtn.title = 'Voltar ao topo';
+    }
+    
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.offsetHeight;
+
+    // Se a parte de baixo da janela chegou perto do final da página
+    if (scrollTop + windowHeight >= bodyHeight - 50) {
+        // botão vai para "fim da página"
+        scrollBtn.style.position = 'absolute';
+        scrollBtn.style.bottom = '20px'; // distância do final do conteúdo
+    } else {
+        // botão flutuante no canto
+        scrollBtn.style.position = 'fixed';
+        scrollBtn.style.bottom = '150px'; // posição original
     }
 });
 
@@ -74,7 +90,6 @@ scrollBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
-
 
 // Busca dados da API OpenWeatherMap.
 async function searchWeather(city) { 
@@ -153,7 +168,7 @@ function changeBackground(tempC) {
     } else if (tempC <= 26) {
         start = '#fff5e6'; end = '#ffe6d1';
     } else {
-        start = '#fff0f0'; end = '#ffe6e6';
+        start = '#fff0f0'; end = '#e4babaff';
     }
     document.body.style.setProperty('--bg-start', start);
     document.body.style.setProperty('--bg-end', end);
