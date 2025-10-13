@@ -173,6 +173,11 @@ function changeBackground(tempC) {
 
 // Renderiza os dados na interface.
 function showWeather(data) {
+    if (!data || !data.main) {   
+        showError(new Error(data?.message || 'Cidade não encontrada'));
+        return;
+    }
+
     if (!data || typeof data !== 'object') {
         resultDiv.innerHTML = '<div class="error">Erro inesperado</div>';
         return;
@@ -263,7 +268,7 @@ function showError(err) {
 
     let msg = 'Erro ao buscar os dados';
     msg = err.message;
-    
+
     resultDiv.innerHTML = `<div class="error">${msg}</div>`;
     resultDiv.classList.remove('animate__shakeX');
     void resultDiv.offsetWidth;
