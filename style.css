@@ -239,7 +239,7 @@ body {
 }
 
 .search-history h3 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 8px;
@@ -270,8 +270,9 @@ body {
 
 
 .error {
+  margin: auto -31%;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -441,7 +442,7 @@ body {
 @media (max-width: 1024px) {
   .search {
     width: 80%;
-    margin: 2rem 8%;
+    margin: 2rem 10%;
   }
 
   .preloader {
@@ -449,7 +450,7 @@ body {
   }
   
   .result {
-    margin: 0 0 35px 19%;
+    margin: 0 0 35px 18%;
   }
 
   .location h2 { 
@@ -463,6 +464,11 @@ body {
 
   .search-history {
     margin: auto;
+  }
+
+   .error {
+    font-size: 15px;
+    margin: auto -15%;
   }
 }
 
@@ -497,6 +503,11 @@ body {
   .cards { 
     min-width: 100px; 
   }
+
+  .error {
+    font-size: 15px;
+    margin: auto -10%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -516,11 +527,11 @@ body {
   }
   
   .result {
-    margin: 0 0 55px -1%;
+    margin: 0 0 55px -3%;
   }
 
   .location h2 { 
-    font-size: 35px; 
+    font-size: 40px; 
   }
 
   .temp .big { 
@@ -549,5 +560,18 @@ body {
 
   .cards-container { 
     gap: 22px; 
+  }
+
+  .search-history {
+    margin-top: -20px;
+  }
+
+  .search-history h3 {
+    font-size: 16px;
+  }
+
+  .error {
+    font-size: 12px;
+    margin: auto 10%;
   }
 }
