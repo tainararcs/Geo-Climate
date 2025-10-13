@@ -1,7 +1,3 @@
-require('dotenv').config();
-
-const API_KEY = process.env.API_KEY;
-
 const searchInput = document.querySelector('.search-input');
 const searchBtn = document.querySelector('.search-btn');
 const resultDiv = document.querySelector('.result');
@@ -92,9 +88,7 @@ scrollBtn.addEventListener('click', () => {
 });
 
 // Busca dados da API OpenWeatherMap.
-async function searchWeather(city) { 
-    // const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pt_br`; 
-    
+async function searchWeather(city) {     
     const response = await fetch(`/api/climate?cidade=${encodeURIComponent(city)}`);
 
     if (!response.ok) {
