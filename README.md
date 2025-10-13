@@ -1,4 +1,4 @@
-# Geo-Climate 🌡
+# Geo-Climate 
 
 **GeoClimate** é uma aplicação web moderna que permite consultar as condições climáticas de qualquer cidade do mundo de forma rápida e intuitiva. A aplicação exibe a temperatura atual, máximas e mínimas, horários de nascer e pôr do sol, além de manter um histórico de pesquisas para fácil acesso.
 
