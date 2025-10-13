@@ -82,8 +82,8 @@ body {
 /* Resultado da requisição e icon */
 .result {
   margin: 50px 32%;
-  width: 90%;
-  max-width: 680px;
+  width: 80%;
+  max-width: 100%;
   border-radius: 24px;
   padding: 48px 36px;
   display: flex;
@@ -437,3 +437,104 @@ body {
 	width: 200px;
 }
 
+
+@media (max-width: 1024px) {
+  .search {
+    width: 80%;
+    margin: 2rem 8%;
+  }
+
+  .result {
+    margin: 0 0 35px 19%;
+  }
+
+  .location h2 { 
+    font-size: 60px; 
+  }
+
+  .temp .big { 
+    font-size: 80px; 
+  }
+
+
+  .search-history {
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .search { 
+    margin: 25px 0 0 8%;
+  }
+
+  .search-input { 
+    height: 3rem; 
+    padding: 0 3rem 0 1rem; 
+  }
+  
+  .result {
+    margin: 0 0 55px 12%;
+  }
+
+  .location h2 { 
+    font-size: 50px; 
+  }
+
+  .temp .big { 
+    padding: 10px;
+    font-size: 48px;
+
+  }
+  
+  .cards { 
+    min-width: 100px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .search { 
+    margin: 25px 0 0 6%;
+  }
+  
+  .search-input { 
+    font-size: 50px;   /* aumenta o tamanho da fonte do texto */
+    height: 150rem;      /* altura do input */
+    padding: 0 5rem;   /* espaço interno à esquerda e à direita */
+  }
+  
+  .result {
+    margin: 0 0 55px -1%;
+  }
+
+  .location h2 { 
+    font-size: 35px; 
+  }
+
+  .temp .big { 
+    font-size: 48px; 
+  }
+
+  .icon-card img { 
+    width: 80px; 
+    height: 80px;
+  }
+
+  .cards { 
+    padding: 18px 12px; 
+    min-width: 150px; 
+  }
+
+  .search-input { 
+    height: 2.5rem; 
+    font-size: 0.9rem; 
+    padding: 0 2.5rem 0 0.8rem; 
+  }
+
+  .scroll-btn { 
+    display: none !important;
+  }
+
+  .cards-container { 
+    gap: 22px; 
+  }
+}
