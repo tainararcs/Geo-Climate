@@ -259,8 +259,11 @@ function showWeather(data) {
 
 // Exibe mensagens de erro.
 function showError(err) {
+    console.error(err);
+
     let msg = 'Erro ao buscar os dados';
     msg = err.message;
+    
     resultDiv.innerHTML = `<div class="error">${msg}</div>`;
     resultDiv.classList.remove('animate__shakeX');
     void resultDiv.offsetWidth;
