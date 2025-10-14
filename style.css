@@ -30,7 +30,7 @@ body {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 250em;
+  max-width: 100%;
   padding: 22px;
   backdrop-filter: blur(6px) saturate(120%);
 }
@@ -81,7 +81,7 @@ body {
 
 /* Resultado da requisição e icon */
 .result {
-  margin: 50px 32%;
+  margin: 50px 33%;
   width: 80%;
   max-width: 100%;
   border-radius: 24px;
@@ -209,7 +209,7 @@ body {
 .scroll-btn {
   display: none;
   position: absolute;
-  bottom: 180px;
+  bottom: 150px;
   right: 70px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
