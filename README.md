@@ -16,7 +16,14 @@
 
 Acesse a aplicação GeoClimate diretamente pelo seu navegador, sem necessidade de instalação:
 
-🌐 **Link de acesso:** [GeoClimate](https://tainararcs.github.io/Geo-Climate/)
+🌐 **Link de acesso:** [Ge-oClimate](https://geo-climate.vercel.app/)
+<div align="center">
+  <a href="https://tainararcs.github.io/Social-Network-AI-Prototype/">
+    <img src="https://image.thum.io/get/width/1000/https://tainararcs.github.io/Social-Network-AI-Prototype/?v=2" 
+         alt="Tela de Login" 
+         style="width: 90%; max-width: 600px; height: 90%;  height: 600px; border-radius: 12px; border: 1px solid #ddd;">
+  </a>
+</div>
 
 ## Funcionalidades
 
