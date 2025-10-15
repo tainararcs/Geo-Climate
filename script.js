@@ -82,9 +82,10 @@ scrollBtn.addEventListener('click', () => {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
 
     if (scrolled < maxScroll * 0.4) {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    } 
+    else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
 
@@ -105,20 +106,22 @@ async function detectCityAndSearch() {
   try {
     // Pega IP público.
     const ipResp = await fetch('https://api.ipify.org?format=json');
-    if (!ipResp.ok) throw new Error('Não foi possível obter IP');
+    if (!ipResp.ok) 
+        throw new Error('Não foi possível obter IP');
     const ipData = await ipResp.json();
     const ip = ipData.ip;
 
     // Geolocaliza pelo IP (ipapi.co).
     const geoResp = await fetch(`https://ipapi.co/${ip}/json/`);
-    if (!geoResp.ok) throw new Error('Erro ao consultar geolocalização');
+    if (!geoResp.ok) 
+        throw new Error('Erro ao consultar geolocalização');
     const geo = await geoResp.json();
 
     // Campos úteis.
     const city = geo.city || geo.region || geo.country_name;
 
     if (!city) {
-      console.warn('Cidade não detectada pelo IP');
+      console.log('Cidade não detectada pelo IP');
       return;
     }
 
@@ -133,8 +136,9 @@ async function detectCityAndSearch() {
 
 // Chama a detecção no carregamento.
 window.addEventListener('load', () => {
-  // Apenas se o campo de busca estiver vazio.
-  if (!searchInput.value.trim()) detectCityAndSearch();
+    // Apenas se o campo de busca estiver vazio.
+    if (!searchInput.value.trim()) 
+        detectCityAndSearch();
 });
                  
 // Converte timestamp (UTC) + timezone (segundos) para horário local formatado pt-BR HH:MM.
@@ -266,40 +270,40 @@ function showError(err) {
 
 // Armazena e gerencia o histórico de pesquisas.
 function saveToHistory(city) {
-  if (!city) return;
+    if (!city) return;
 
-  // Remove duplicadas.
-  history = history.filter(item => item.toLowerCase() !== city.toLowerCase());
+    // Remove duplicadas.
+    history = history.filter(item => item.toLowerCase() !== city.toLowerCase());
 
-  // Adiciona no início.
-  history.unshift(city);
+    // Adiciona no início.
+    history.unshift(city);
 
-  // Limita a 10 cidades.
-  history = history.slice(0, 10);
+    // Limita a 10 cidades.
+    history = history.slice(0, 10);
 
-  // Atualiza exibição.
-  renderHistory();
+    // Atualiza exibição.
+    renderHistory();
 }
 
 // Renderiza o histórico na tela.
 function renderHistory() {
-  if (history.length === 0) {
-    searchHistory.innerHTML = '<p class="muted">Nenhuma pesquisa recente</p>';
-    return;
-  }
+    if (history.length === 0) {
+        searchHistory.innerHTML = '<p class="muted">Nenhuma pesquisa recente</p>';
+        return;
+    }
 
-  searchHistory.innerHTML = `
-    <h3>Histórico de Pesquisas</h3>
-    <ul class="history-list">
-      ${history.map(city => `<li class="history-item">${city}</li>`).join('')}
-    </ul>
-  `;
+    searchHistory.innerHTML = `
+        <h3>Histórico de Pesquisas</h3>
+        <ul class="history-list">
+            ${history.map(city => `<li class="history-item">${city}</li>`).join('')}
+        </ul>
+    `;
 
-  // Adiciona evento de clique para cada item.
-  document.querySelectorAll('.history-item').forEach(item => {
-    item.addEventListener('click', () => {
-      searchInput.value = item.textContent;
-      handleSearch();
+    // Adiciona evento de clique para cada item.
+    document.querySelectorAll('.history-item').forEach(item => {
+        item.addEventListener('click', () => {
+            searchInput.value = item.textContent;
+            handleSearch();
+        });
     });
-  });
 }
