@@ -48,7 +48,7 @@ body {
   position: relative; /* importante para posicionar o botão dentro */
   width: 100%;
   max-width: 75rem;
-  margin: 2rem 16%;
+  margin: 2rem 18%;
   display: flex;
   align-items: center;
 }
@@ -81,7 +81,7 @@ body {
 
 /* Resultado da requisição e icon */
 .result {
-  margin: 50px 28%;
+  margin: 50px 30%;
   width: 80%;
   max-width: 100%;
   padding: 48px 36px;
@@ -270,7 +270,7 @@ body {
 
 
 .error {
-  margin: auto -31%;
+  margin: auto -28%;
   font-size: 18px;
   font-weight: 600;
   width: 100%;
