@@ -251,7 +251,7 @@ function showWeather(data) {
     resultDiv.classList.add('animate__animated', 'animate__fadeIn');
 }
 
-const icon = document.getElementById('icon-card');
+const icon = document.querySelector('.icon-card');
 icon.addEventListener('click', () => {
     icon.classList.add('animate__animated', 'animate__fadeIn');
 });
