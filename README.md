@@ -17,13 +17,16 @@
 Acesse a aplicação GeoClimate diretamente pelo seu navegador, sem necessidade de instalação:
 
 🌐 **Link de acesso:** [Geo-Climate](https://geo-climate.vercel.app/)
+
 <div align="center">
   <a href="https://geo-climate.vercel.app/">
-    <img src="https://image.thum.io/get/width/1000/https://geo-climate.vercel.app/" 
-         alt="Visualização do site" 
-         style="width: 90%; max-width: 600px; height: 600px; border-radius: 12px; border: 1px solid #ddd;">
+    <img 
+      src="./assets/preview.png"
+      alt="Visualização completa do site GeoClimate"
+      style="width: 90%; max-width: 900px; border-radius: 12px; border: 1px solid #ddd;">
   </a>
 </div>
+
 
 ## Funcionalidades
 
