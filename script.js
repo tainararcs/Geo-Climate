@@ -260,10 +260,15 @@ function showWeather(data) {
 
 // Exibe mensagens de erro.
 function showError(err) {
+    searchHistory.style.display = 'none'
+    scrollBtn.style.display = 'none';
+    preloader.style.display = 'block';
+
     let msg = 'Erro ao buscar os dados';
     msg = err.message;
     resultDiv.innerHTML = `<div class="error">${msg}</div>`;
     resultDiv.classList.remove('animate__shakeX');
+    
     void resultDiv.offsetWidth;
     resultDiv.classList.add('animate__animated', 'animate__shakeX');
 }
