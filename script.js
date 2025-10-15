@@ -1,4 +1,3 @@
-const API_KEY = 'f77462a9769ff8e59091548c0d2b0474';
 
 const searchInput = document.querySelector('.search-input');
 const searchBtn = document.querySelector('.search-btn');
@@ -29,7 +28,7 @@ async function handleSearch() {
 
     try {
         // await faz o JavaScript esperar a resposta da API antes de continuar.
-        const data = await searchWeather(city);
+        const data = await fetch(`http://localhost:3000/api/climate?city=${encodeURIComponent(city)}`);
         showWeather(data);
         searchHistory.style.display = 'block'
         scrollBtn.style.display = 'block';
@@ -90,8 +89,10 @@ scrollBtn.addEventListener('click', () => {
 });
 
 // Busca dados da API OpenWeatherMap.
-async function searchWeather(city) {     
-    const response = await fetch(`/api/climate?city=${encodeURIComponent(city)}`);
+async function searchWeather(city) { 
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pt_br`; 
+    
+    const response = await fetch(url);
 
     if (!response.ok) {
         console.log(`HTTP ERROR: ${response.status}`)
@@ -173,11 +174,6 @@ function changeBackground(tempC) {
 
 // Renderiza os dados na interface.
 function showWeather(data) {
-    if (!data || !data.main) {   
-        showError(new Error(data?.message || 'Cidade não encontrada'));
-        return;
-    }
-
     if (!data || typeof data !== 'object') {
         resultDiv.innerHTML = '<div class="error">Erro inesperado</div>';
         return;
@@ -253,22 +249,17 @@ function showWeather(data) {
     resultDiv.classList.remove('animate__fadeIn');
     void resultDiv.offsetWidth;
     resultDiv.classList.add('animate__animated', 'animate__fadeIn');
-
-    const iconBtn = document.querySelector('.icon-card');
-    if (iconBtn) {
-        iconBtn.addEventListener('click', () => {
-            iconBtn.classList.add('animate__animated', 'animate__fadeIn');
-        });
-    }
 }
+
+const icon = document.getElementById('icon-card');
+icon.addEventListener('click', () => {
+    icon.classList.add('animate__animated', 'animate__fadeIn');
+});
 
 // Exibe mensagens de erro.
 function showError(err) {
-    console.error(err);
-
     let msg = 'Erro ao buscar os dados';
     msg = err.message;
-
     resultDiv.innerHTML = `<div class="error">${msg}</div>`;
     resultDiv.classList.remove('animate__shakeX');
     void resultDiv.offsetWidth;
