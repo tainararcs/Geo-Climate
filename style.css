@@ -48,7 +48,7 @@ body {
   position: relative; /* importante para posicionar o botão dentro */
   width: 100%;
   max-width: 75rem;
-  margin: 2rem auto;
+  margin: 2rem 14%;
   display: flex;
   align-items: center;
 }
@@ -442,7 +442,7 @@ body {
 @media (max-width: 1024px) {
   .search {
     width: 80%;
-    margin: 2rem 10%;
+    margin: 2rem 7%;
   }
 
   .preloader {
@@ -450,7 +450,7 @@ body {
   }
   
   .result {
-    margin: 0 0 35px 18%;
+    margin: 0 0 35px 13%;
   }
 
   .location h2 { 
@@ -515,7 +515,7 @@ body {
 
 @media (max-width: 480px) {
   .search { 
-    margin: 25px 0 0 4%;
+    margin: 25px 0 0 5%;
   }
   
   .search-input { 
