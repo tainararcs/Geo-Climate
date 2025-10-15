@@ -28,7 +28,7 @@ async function handleSearch() {
 
     try {
         // await faz o JavaScript esperar a resposta da API antes de continuar.
-        const data = await fetch(`http://localhost:3000/api/climate?city=${encodeURIComponent(city)}`);
+        const data = await searchWeather(city);
         showWeather(data);
         searchHistory.style.display = 'block'
         scrollBtn.style.display = 'block';
@@ -45,7 +45,7 @@ searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') handleSearch();
 });
 
-// Quando o usuário rola a página, atualiza o estado do botão
+// Quando o usuário rola a página, atualiza o estado do botão.
 window.addEventListener('scroll', () => {
     
     const scrolled = window.scrollY;
@@ -64,15 +64,15 @@ window.addEventListener('scroll', () => {
     const windowHeight = window.innerHeight;
     const bodyHeight = document.body.offsetHeight;
 
-    // Se a parte de baixo da janela chegou perto do final da página
+    // Se a parte de baixo da janela chegou perto do final da página.
     if (scrollTop + windowHeight >= bodyHeight - 50) {
-        // botão vai para "fim da página"
+        // Botão vai para "fim da página".
         scrollBtn.style.position = 'absolute';
-        scrollBtn.style.bottom = '20px'; // distância do final do conteúdo
+        scrollBtn.style.bottom = '20px'; // Distância do final do conteúdo.
     } else {
-        // botão flutuante no canto
+        // Botão flutuante no canto.
         scrollBtn.style.position = 'fixed';
-        scrollBtn.style.bottom = '150px'; // posição original
+        scrollBtn.style.bottom = '150px'; // Posição original.
     }
 });
 
@@ -90,9 +90,7 @@ scrollBtn.addEventListener('click', () => {
 
 // Busca dados da API OpenWeatherMap.
 async function searchWeather(city) { 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pt_br`; 
-    
-    const response = await fetch(url);
+    const response = await fetch(`/api/climate?city=${encodeURIComponent(city)}`);
 
     if (!response.ok) {
         console.log(`HTTP ERROR: ${response.status}`)
