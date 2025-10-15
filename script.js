@@ -249,12 +249,12 @@ function showWeather(data) {
     resultDiv.classList.remove('animate__fadeIn');
     void resultDiv.offsetWidth;
     resultDiv.classList.add('animate__animated', 'animate__fadeIn');
-}
 
-const icon = document.querySelector('.icon-card');
-icon.addEventListener('click', () => {
-    icon.classList.add('animate__animated', 'animate__fadeIn');
-});
+    const iconBtn = document.getElementById('icon-card');
+    iconBtn.addEventListener('click', () => {
+        iconBtn.classList.add('animate__animated', 'animate__fadeIn');
+    });
+}
 
 // Exibe mensagens de erro.
 function showError(err) {
