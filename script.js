@@ -172,8 +172,8 @@ function changeBackground(tempC) {
 
 // Renderiza os dados na interface.
 function showWeather(data) {
-    if (!data || typeof data !== 'object') {
-        resultDiv.innerHTML = '<div class="error">Erro inesperado</div>';
+    if (!data || !data.main) {   
+        showError(new Error(data?.message || 'Cidade não encontrada'));
         return;
     }
 
