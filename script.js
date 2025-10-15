@@ -248,7 +248,7 @@ function showWeather(data) {
     void resultDiv.offsetWidth;
     resultDiv.classList.add('animate__animated', 'animate__fadeIn');
 
-    const iconBtn = document.getElementById('icon-card');
+    const iconBtn = document.getElementById('.icon-card');
     iconBtn.addEventListener('click', () => {
         iconBtn.classList.add('animate__animated', 'animate__fadeIn');
     });
